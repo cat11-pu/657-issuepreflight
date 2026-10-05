@@ -1,0 +1,25 @@
+version: '3'
+services:
+  controller:
+    build:
+      context: .
+      dockerfile: docker/controller.dockerfile
+    volumes:
+    - ./controller:/go/src/controller
+    command: [
+        "sh",
+        "-c",
+        "/wait && go run ."
+    ]
+
+  acapy:
+    build:
+      context: .
+      dockerfile: ./docker/acapy.dockerfile
+
+  tails-server:
+    build:
+      context: ./indy-tails-server
+      dockerfile: ./docker/Dockerfile.tails-server
+    volumes:
+      - ./tails-files:/tails-files/

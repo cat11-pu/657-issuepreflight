@@ -1,0 +1,5 @@
+.postgres
+.idea
+.env.prod
+.env
+tails-files/*

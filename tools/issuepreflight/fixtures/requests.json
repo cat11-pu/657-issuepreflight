@@ -1,0 +1,40 @@
+{
+  "issuer_did": "BzCbsNYhMrjHiqZDTUASHg",
+  "candidates": [
+    {"id": "s01", "kind": "schema", "body": {"name": "registration.dflow", "version": "1.0.0", "attributes": ["did", "name"]}},
+    {"id": "s02", "kind": "schema", "body": {"name": "transcript", "version": "2.0", "attributes": ["studentId", "grade", "degree"]}},
+    {"id": "s03", "kind": "schema", "body": {"name": "membership", "version": "3", "attributes": ["since", "tier"]}},
+    {"id": "s04", "kind": "schema", "body": {"name": "employment", "version": "1.1", "attributes": ["employer", "role", "start"]}},
+    {"id": "s05", "kind": "schema", "body": {"name": "", "version": "1.0", "attributes": ["a"]}},
+    {"id": "s06", "kind": "schema", "body": {"name": "bad:name", "version": "1.0", "attributes": ["a"]}},
+    {"id": "s07", "kind": "schema", "body": {"name": "kyc", "version": "v2", "attributes": ["id"]}},
+    {"id": "s08", "kind": "schema", "body": {"name": "lottery", "version": "1.0", "attributes": []}},
+    {"id": "s09", "kind": "schema", "body": {"name": "permit", "version": "1.0", "attributes": ["zone", "bad name"]}},
+    {"id": "s10", "kind": "schema", "body": {"name": "noise", "version": "1.0", "attributes": ["n", "n", "bad name"]}},
+
+    {"id": "c01", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "support_revocation": true, "revocation_registry_size": 1000}},
+    {"id": "c02", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:transcript:2.0", "support_revocation": false, "revocation_registry_size": 0}},
+    {"id": "c03", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:membership:3", "support_revocation": true, "revocation_registry_size": 4}},
+    {"id": "c04", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:transcript:2.0", "support_revocation": false, "revocation_registry_size": 500}},
+    {"id": "c05", "kind": "credential-definition", "body": {"schema_id": "transcript:2.0", "support_revocation": true, "revocation_registry_size": 100}},
+    {"id": "c06", "kind": "credential-definition", "body": {"schema_id": "6qnvgJtqwK44D8LFYnV5Yf:2:absent:1.0", "support_revocation": true, "revocation_registry_size": 100}},
+    {"id": "c07", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "support_revocation": true, "revocation_registry_size": 99999}},
+    {"id": "c08", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:membership:3", "support_revocation": true, "revocation_registry_size": 2}},
+    {"id": "c09", "kind": "credential-definition", "body": {"schema_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "support_revocation": true, "revocation_registry_size": 100}},
+
+    {"id": "i01", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-1", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "comment": "first", "issuer_did": "BzCbsNYhMrjHiqZDTUASHg", "attributes": {"did": "did:sov:6qnvgJtqwK44D8LFYnV5Yf", "name": "Ada"}}},
+    {"id": "i02", "kind": "issue-credential", "api": "v2", "body": {"connection_id": "conn-2", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:7:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:transcript:2.0", "comment": "", "issuer_did": "", "attributes": {"studentId": "S-9", "degree": "BSc & CS", "grade": "A"}}},
+    {"id": "i03", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-3", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:4:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:membership:3", "comment": "", "issuer_did": "", "attributes": {"tier": "gold", "since": "2019"}}},
+    {"id": "i04", "kind": "issue-credential", "api": "v2", "body": {"connection_id": "conn-4", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:9:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:employment:1.1", "comment": "", "issuer_did": "", "attributes": {"start": "2020-01", "employer": "ACME", "role": "engineer"}}},
+    {"id": "i05", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-1", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "comment": "second", "issuer_did": "6qnvgJtqwK44D8LFYnV5Yf", "attributes": {"name": "Ada", "did": "did:sov:6qnvgJtqwK44D8LFYnV5Yf"}}},
+    {"id": "i06", "kind": "issue-credential", "api": "v3", "body": {"connection_id": "conn-6", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "comment": "", "issuer_did": "", "attributes": {"did": "did:sov:6qnvgJtqwK44D8LFYnV5Yf", "name": "Ada"}}},
+    {"id": "i07", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "comment": "", "issuer_did": "", "attributes": {"did": "did:sov:6qnvgJtqwK44D8LFYnV5Yf", "name": "Ada"}}},
+    {"id": "i08", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-8", "credential_definition_id": "nope", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:registration.dflow:1.0.0", "comment": "", "issuer_did": "", "attributes": {"did": "did:sov:6qnvgJtqwK44D8LFYnV5Yf", "name": "Ada"}}},
+    {"id": "i09", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-9", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:12:default", "schema_id": "transcript", "comment": "", "issuer_did": "", "attributes": {"degree": "BSc", "grade": "A", "studentId": "S-9"}}},
+    {"id": "i10", "kind": "issue-credential", "api": "v2", "body": {"connection_id": "conn-10", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:7:default", "schema_id": "6qnvgJtqwK44D8LFYnV5Yf:2:absent:1.0", "comment": "", "issuer_did": "", "attributes": {"degree": "BSc", "grade": "A", "studentId": "S-9"}}},
+    {"id": "i11", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-11", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:7:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:transcript:2.0", "comment": "", "issuer_did": "", "attributes": {"degree": "BSc", "grade": "A"}}},
+    {"id": "i12", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-12", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:9:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:employment:1.1", "comment": "", "issuer_did": "", "attributes": {"employer": "ACME", "role": "engineer", "start": "2020-01", "note": "x"}}},
+    {"id": "i13", "kind": "issue-credential", "api": "v2", "body": {"connection_id": "conn-13", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:7:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:transcript:2.0", "comment": "", "issuer_did": "", "attributes": {}}},
+    {"id": "i14", "kind": "issue-credential", "api": "v1", "body": {"connection_id": "conn-14", "credential_definition_id": "BzCbsNYhMrjHiqZDTUASHg:3:CL:4:default", "schema_id": "BzCbsNYhMrjHiqZDTUASHg:2:membership:3", "comment": "", "issuer_did": "", "attributes": {"tier": "gold", "since": "2019", "foo": "bar"}}}
+  ]
+}
